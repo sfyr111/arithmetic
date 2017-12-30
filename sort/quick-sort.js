@@ -1,7 +1,7 @@
 const test = require('./test')
 
 /**
- * O(N*logN)
+ * O(N*logN)最好，最坏O(N^2)(随机划分值不会出现最坏情况) 最坏情况就是找到划分到最小或者最大值
  * 额外空间复杂度O(logN)
  * 不稳定
  * @param {Array} arr 
@@ -15,7 +15,7 @@ function quickSort(arr) {
 
 function quickSortSub(arr, l, r) {
   if (l < r) {
-    // 随机选择一个数，人为放到最后
+    // 随机选择一个数，人为放到最后 O(1)
     swap(arr, (l + Math.random() * (r - l + 1) | 0), r) // 先把一个随机数放到最后
     var p = partition(arr, l, r)
     
@@ -24,7 +24,7 @@ function quickSortSub(arr, l, r) {
   }
 }
 
-// 划分函数
+// 划分函数 O(n)
 function partition(arr, l ,r) {
   var less = l - 1 // 小于区在l-1
   var more = r // 大于区就是r, r位置是人为放到r的随机数, 这个随机数就是大于区

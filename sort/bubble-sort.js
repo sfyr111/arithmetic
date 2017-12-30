@@ -1,3 +1,4 @@
+const test = require('./test')
 /**
  * 复杂度O(N^2)
  * 额外空间复杂度O(1)
@@ -15,14 +16,8 @@ function bubbleSort(arr) {
   }
 }
 
-/**
- * 
- * @param {Array} arr 
- * @param {number} n 
- * @param {number} m 
- */
 function swap(arr, n, m) {
-  arr[n] = arr[n] ^ arr[m]
-  arr[m] = arr[n] ^ arr[m]
-  arr[n] = arr[n] ^ arr[m]
+  [arr[n], arr[m]] = [arr[m], arr[n]]
 }
+
+test(bubbleSort)

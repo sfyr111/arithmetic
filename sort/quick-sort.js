@@ -1,6 +1,7 @@
 const test = require('./test')
 
 /**
+ * T(n) = 2T(n/2) + O(n) => O(nlogn)
  * O(N*logN)最好，最坏O(N^2)(随机划分值不会出现最坏情况) 最坏情况就是找到划分到最小或者最大值
  * 额外空间复杂度O(logN)
  * 不稳定

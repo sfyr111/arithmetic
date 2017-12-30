@@ -3,6 +3,7 @@ const test = require('./test')
 /**
  * T(n) = 2T(n/2) + O(n) => O(nlogn)
  * a = 2, b = n/2, d = n = 1 master 公式
+ * 额外空间复杂度O(n)
  * @param {Array} arr 
  */
 function mergeSort(arr) {

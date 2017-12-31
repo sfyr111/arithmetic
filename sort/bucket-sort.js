@@ -1,7 +1,4 @@
 const test = require('./test')
-var str = '78 119 76 75 15 66 108 25 33 130 119 68 141 6 36 72 108 64 146 112 2 52 21 128 5 107 66 89 73 104 48 127 19 70 60 137 86 38 23 79 46 55 64 7 8 21 77 4 126 26 103 110 89 101 131 121 21 3 100'
-
-var arr = str.split(' ')
 
 // 只能排正整数数组
 function bucketSort(arr) {
@@ -28,7 +25,5 @@ function bucketSort(arr) {
 }
 
 bucketSort(arr)
-// console.log(arr.join(' '))
 var isPosInt = true // 大于0 Positive integer
 test(bucketSort, isPosInt)
-

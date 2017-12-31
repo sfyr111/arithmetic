@@ -6,10 +6,12 @@ function comparator (arr) {
 }
 
 //  for test
-function generateRandomArray (maxSize, maxValue) {
+function generateRandomArray (maxSize, maxValue, isPosInt) {
   let arr = new Array((maxSize + 1) * Math.random() | 0)
   for (let i = 0; i < arr.length; i++) {
-    arr[i] = ((maxValue + 1) * Math.random() - maxValue * Math.random()) | 0
+    !isPosInt 
+    ? arr[i] = ((maxValue + 1) * Math.random() - maxValue * Math.random()) | 0 // 有负整数
+    : arr[i] = ((maxValue + 1) * Math.random()) | 0 // 只有正整数
   }
   return arr
 }
@@ -75,14 +77,14 @@ function printArray (arr) {
   console.log('\n')
 }
 
-module.exports = function main (sort) {
-  let testTime = 10
+module.exports = function main (sort, isPosInt = false) {
+  let testTime = 1000
   let maxSize = 100
   let maxValue = 100
   let succeed = true
 
   for (let i = 0; i < testTime; i++) {
-    let arr1 = generateRandomArray(maxSize, maxValue)
+    let arr1 = generateRandomArray(maxSize, maxValue, isPosInt)
     let arr2 = copyArray(arr1)
     sort(arr1)
     comparator(arr2)
@@ -95,7 +97,7 @@ module.exports = function main (sort) {
   console.log(succeed ? 'Nice!' : 'Fucking fucked!')
   console.log('\n')
 
-  let arr = generateRandomArray(maxSize, maxValue)
+  let arr = generateRandomArray(maxSize, maxValue, isPosInt)
   let arr1 = copyArray(arr)
   let arr2 = copyArray(arr)
   
